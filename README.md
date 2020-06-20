@@ -1,4 +1,4 @@
-# CodeProConnectionCodeProConnection (CPC) 
+# CodeProConnection (CPC) 
   Brought to you by the Silver Foxes Group
   This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.  
   I have a coding project that I need someone to complete.  Where can I go to find potential candidates.  CPC is a website that provides the projects to many possible applicants for a small fee.
