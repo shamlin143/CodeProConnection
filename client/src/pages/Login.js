@@ -73,13 +73,13 @@ function Login() {
                 I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
               />
                   <Input
-                      value={this.state.search}
-                      onChange={this.handleInputChange}
+                      value={0}
+                      onChange={handleInputChange}
                       name="LoginBtn"
                       placeholder="Login user"
                     />
                     <LoginBtn
-                      disabled={!(this.state.search)}
+                      disabled={0}
                     >
                       <Link to="/login">
                       <LoginBtn renderAs="button">

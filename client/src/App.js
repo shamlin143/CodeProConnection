@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <Switch>
         <Route exact path = {["/", "/CodePro"]}>
          <Books />
