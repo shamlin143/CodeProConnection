@@ -15,7 +15,10 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
+// set up promises with mongoose
+mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/CodePro");
 
 // Start the API server
