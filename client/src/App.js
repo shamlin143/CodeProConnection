@@ -14,10 +14,10 @@ function App() {
     <div>
       <Nav />
       <Switch>
-        <Route exact path = {["/", "/User"]}>
+        <Route exact path = {["/", "/CodePro"]}>
          <Books />
         </Route>
-        <Route exact path = "/User/:id">
+        <Route exact path = "/CodePro/:id">
           <Detail />
         </Route>
         <Route>
