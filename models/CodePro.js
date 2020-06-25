@@ -3,10 +3,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const codeproSchema = new Schema({
+  projectPost: [{type: Schema.Types.ObjectId, ref: "projectPost"}],
   username: { type: String, required: true },
   email: { type: String, required: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  isFreelancer: { type: Boolean },
+  isEmployer: { type: Boolean }
 });
+
 
 codeproSchema
   .virtual('passwordConfirmation')
