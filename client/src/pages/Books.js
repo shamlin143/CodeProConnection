@@ -52,37 +52,70 @@ function Books() {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1> Login</h1>
             </Jumbotron>
             <form>
               <Input
                 onChange={handleInputChange}
-                name="title"
-                placeholder="Title (required)"
+                name="Username"
+                placeholder="Username (required)"
               />
               <Input
                 onChange={handleInputChange}
-                name="author"
-                placeholder="Author (required)"
+                name="Password"
+                placeholder="Password (required)"
               />
               <TextArea
                 onChange={handleInputChange}
                 name="synopsis"
-                placeholder="Synopsis (Optional)"
+                placeholder="CodeProConnection (CPC)
+                Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
+                I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
               />
               <FormBtn
                 disabled={!(formObject.author && formObject.title)}
                 onClick={handleFormSubmit}
               >
-                Submit Book
+                Login
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>Sign up</h1>
             </Jumbotron>
-            {books.length ? (
+            <form>
+              <Input
+                onChange={handleInputChange}
+                name="Username"
+                placeholder="Username (required)"
+              />
+              <Input
+                onChange={handleInputChange}
+                name="Password"
+                placeholder="Password (required)"
+              />
+
+                <Input
+                onChange={handleInputChange}
+                name="email address"
+                placeholder="email address(required)"
+              />             
+               <TextArea
+                // onChange={handleInputChange}
+                name="synopsis"
+                placeholder="CodeProConnection (CPC)
+                Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
+                I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
+              />
+              <FormBtn
+                disabled={!(formObject.author && formObject.title)}
+                onClick={handleFormSubmit}
+              >
+                Sign Up
+              </FormBtn>
+            </form>
+            {/* {books.length ? (
               <List>
                 {books.map(book => (
                   <ListItem key={book._id}>
@@ -96,8 +129,8 @@ function Books() {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+              <h3>Sign UP</h3>
+            )} */}
           </Col>
         </Row>
       </Container>

@@ -18,7 +18,8 @@ app.use(routes);
 // set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://dritchie3:sevenhigh1@ds163764.mlab.com:63764/heroku_vzc01kjw");
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/CodePro");
 
 // Start the API server
 app.listen(PORT, function() {
