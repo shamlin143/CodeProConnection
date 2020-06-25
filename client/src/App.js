@@ -1,5 +1,5 @@
 import React from "react";
-import Books from "./pages/Books";
+import Books from "./pages/Login";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
@@ -14,10 +14,10 @@ function App() {
     <div>
       <Nav />
       <Switch>
-        <Route exact path = {["/", "/Books"]}>
+        <Route exact path = {["/", "/User"]}>
          <Books />
         </Route>
-        <Route exact path = "/Books/:id">
+        <Route exact path = "/User/:id">
           <Detail />
         </Route>
         <Route>
