@@ -66,6 +66,11 @@ function SignUp() {
                 name="Password"
                 placeholder="Password (required)"
               />
+               <Input
+                onChange={handleInputChange}
+                name="Password"
+                placeholder="Password (required)"
+              />
               <div>
                 <h5>
                 Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
