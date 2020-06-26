@@ -1,8 +1,11 @@
 const router = require("express").Router();
-const booksController = require("../../controllers/booksController");
+// const booksController = require("../../controllers/booksController");
+const signup = require("../../client/src/pages/signup")
 
 // Matches with "/api/books"
-router.route("/")
+router.route("signup")
+return
+signup
   .get(booksController.findAll)
   .post(booksController.create);
 
