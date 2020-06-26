@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import LoginBtn from "../components/LoginBtn";
-import SignUpBtn from "../components/SignUpBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import button from "../components/Button/button";
 
 
 
@@ -70,7 +70,7 @@ function Login() {
                <Input
                 onChange={handleInputChange}
                 name="Password"
-                placeholder="Password (required)"
+                placeholder="Password Verification (required)"
               />
               <div>
                 <h5>
@@ -88,18 +88,10 @@ function Login() {
                       </LoginBtn>
                       </Link>
                     </LoginBtn>
-
-                    <SignUpBtn
-                      disabled={0}
-                    >
-                      <Link to="/signup">
-                      <SignUpBtn renderAs="button">
-                      <button onClick={() => { handleFormSubmit()}}></button>
-                       <span>SignUp</span>
-                      </SignUpBtn>
-                      </Link>
-                    </SignUpBtn>
-                </form>
+                          
+                <button  onClick="parent.location='signup'" value='SignUp'>SignUp</button>
+                                   
+              </form>
                 </div>
                
        </Container>

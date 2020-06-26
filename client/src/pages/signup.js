@@ -69,7 +69,7 @@ function SignUp() {
                <Input
                 onChange={handleInputChange}
                 name="Password"
-                placeholder="Password (required)"
+                placeholder="Password Verification (required)"
               />
               <div>
                 <h5>
