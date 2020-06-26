@@ -1,33 +1,28 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
+import SignUpBtn from "../components/SignUpBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-function Books() {
-  const [books, setBooks] = useState([])
+
+
+function SignUp() {
+  const [user, setUser] = useState([])
   const [formObject, setFormObject] = useState({})
 
   useEffect(() => {
-    loadBooks()
+  loadUser()
   }, [])
 
-  function loadBooks() {
-    API.getBooks()
+  function loadUser() {
+    API.getUser()
       .then(res => 
-        setBooks(res.data)
+        setUser(res.data)
       )
       .catch(err => console.log(err));
   };
-
-  function deleteBook(id) {
-    API.deleteBook(id)
-      .then(res => loadBooks())
-      .catch(err => console.log(err));
-  }
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -36,106 +31,66 @@ function Books() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
-      API.saveBook({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis
-      })
-        .then(res => loadBooks())
+    if (formObject.email && formObject.password) {
+      API.loginUser({
+        eamil: formObject.email,
+        password: formObject.password,
+        })
+        .then(res => loadUser())
         .catch(err => console.log(err));
     }
   };
 
     return (
       <Container fluid>
-        <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1> Login</h1>
-            </Jumbotron>
-            {/* <form>
-              <Input
-                onChange={handleInputChange}
-                name="Username"
-                placeholder="Username (required)"
-              />
-              <Input
-                onChange={handleInputChange}
-                name="Password"
-                placeholder="Password (required)"
-              />
-              <TextArea
-                onChange={handleInputChange}
-                name="synopsis"
-                placeholder="CodeProConnection (CPC)
-                Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
-                I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
-              />
-              <FormBtn
-                disabled={!(formObject.author && formObject.title)}
-                onClick={handleFormSubmit}
-              >
-                Login
-              </FormBtn>
-            </form> */}
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Sign up</h1>
-            </Jumbotron>
+        <Jumbotron>
+          <h1 className="titleHead"> CodeProConnection</h1>
+          <h4>As a Freelancer search job postings to match your skill set.  As a Employer post a job and find a qualified Candidate</h4>
+        </Jumbotron>
+              <div className="signUpText">
+                <form >
+                  <div className="signup ">
+                    <h4>SignUp:</h4>
+                  </div>
+                  </form>
+               </div>   
+              <div>
             <form>
               <Input
                 onChange={handleInputChange}
-                name="Username"
-                placeholder="Username (required)"
+                name="email"
+                placeholder="email (required)"
               />
               <Input
                 onChange={handleInputChange}
                 name="Password"
                 placeholder="Password (required)"
               />
-
-                <Input
-                onChange={handleInputChange}
-                name="email address"
-                placeholder="email address(required)"
-              />             
-               <TextArea
-                // onChange={handleInputChange}
-                name="synopsis"
-                placeholder="CodeProConnection (CPC)
+              <div>
+                <h5>
                 Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
                 I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
-              />
-              <FormBtn
-                disabled={!(formObject.author && formObject.title)}
-                onClick={handleFormSubmit}
-              >
-                Sign Up
-              </FormBtn>
-            </form>
-            {/* {books.length ? (
-              <List>
-                {books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>Sign UP</h3>
-            )} */}
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
+                </h5>
+              </div>
+
+                    <SignUpBtn
+                      disabled={0}
+                    >
+                      <Link to="/signup">
+                      <SignUpBtn renderAs="button">
+                      <button onClick={() => { handleFormSubmit()}}></button>
+                       <span>SignUp</span>
+                      </SignUpBtn>
+                      </Link>
+                    </SignUpBtn>
+                </form>
+                </div>
+               
+       </Container>
+        )
+        }
+       
+  
 
 
 export default SignUp;
