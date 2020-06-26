@@ -87,7 +87,7 @@ function Login() {
                     <SignUpBtn
                       disabled={0}
                     >
-                      <Link to="/login">
+                      <Link to="/signup">
                       <SignUpBtn renderAs="button">
                       <button onClick={() => { handleFormSubmit()}}></button>
                        <span>SignUp</span>
