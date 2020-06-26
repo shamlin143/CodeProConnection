@@ -3,8 +3,8 @@ background-image: url("../images/codepro.jpeg");
 background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
-width: 100%;
-min-height: 400px;
+width: 95%;
+min-height: 300px;
 padding-top: 100px;
 margin: 0px;
 margin-bottom: 5%;
@@ -25,4 +25,7 @@ h4 {
 h5 {
     font-size: 35px;
     color: black;
+}
+.form-group {
+width: 350px
 }
