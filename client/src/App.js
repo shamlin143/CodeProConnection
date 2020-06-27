@@ -1,7 +1,8 @@
 import React from "react";
-import Books from "./pages/Login";
+import Login from "./pages/Login";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
+import SignUp from "./pages/signup";
 import Nav from "./components/Nav";
 import { BrowserRouter, Switch,  Route }   from "react-router-dom";
 
@@ -15,8 +16,11 @@ function App() {
       {/* <Nav /> */}
       <Switch>
         <Route exact path = {["/", "/CodePro"]}>
-         <Books />
+         <Login />
         </Route>
+        <Route exact path = {["/signup"]}>
+         <SignUp />
+         </Route>
         <Route exact path = "/CodePro/:id">
           <Detail />
         </Route>
