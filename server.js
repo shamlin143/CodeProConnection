@@ -57,5 +57,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/CodePro", { use
 
 // Start the API server
 app.listen(PORT, function() {
+  console.log(PORT);
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
