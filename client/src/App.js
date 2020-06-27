@@ -5,6 +5,7 @@ import NoMatch from "./pages/NoMatch";
 import SignUp from "./pages/signup";
 import Nav from "./components/Nav";
 import { BrowserRouter, Switch,  Route }   from "react-router-dom";
+import JobPosts from "./pages/JobPosts";
 
 // The app will not render correctly until you setup a Route component.
 // Refer to the Basic Example documentation if you need to.
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route exact path = {["/signup"]}>
          <SignUp />
+         </Route>
+         <Route exact path = {["/JobPosts"]}>
+         <JobPosts />
          </Route>
         <Route exact path = "/CodePro/:id">
           <Detail />
