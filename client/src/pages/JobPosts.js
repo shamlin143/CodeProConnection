@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
@@ -23,7 +24,11 @@ useEffect(() => {
 
     return (
         <div className="jobposts">
-        <Jumbotron/>
+        <Jumbotron>
+            <h6>Code Pro Job Postings</h6>
+            </Jumbotron>
+        <p>Code Pro Jobs Listings</p>
+       
         <div>
            <h3>Project Fee: {projectsState.employerFee}</h3>
             <p>Website description: {projectsState.employerProjectDesc}</p>
