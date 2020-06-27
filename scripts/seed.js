@@ -17,9 +17,9 @@ ProjectPost.create([{
   freelancerCredentials: "Javascript",
   freelancerExperience: "2 years",
   employerProjectId: "123456789123",
-  employerProjectDesc: "",
-  employerFee: "",
-  date: ""
+  employerProjectDesc: "I need a website",
+  employerFee: "100",
+  date: "6-27-2020"
 }])
 .then(user => {
   console.log(`${user.length} users created`);
