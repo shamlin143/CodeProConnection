@@ -7,9 +7,14 @@ const ProjectPostSchema = new Schema({
     // userCreator: { type: Schema.Types.ObjectId, ref: "login User" },
     freelancerCredentials: { type: String},
     freelancerExperience: { type: String},
-    employerProjectId: { type: Schema.Types.ObjectId, ref: "CodePro"},
-    employerProjectDesc: { type: String},
-    employerFee: { type: String},
+    businessType: {type: String},
+    employerID: {type: String},
+    employerUserName: {type: String},
+    appFeatures: [ {type: String}],
+    projectId: { type: Schema.Types.ObjectId, ref: "CodePro"},
+    projectDesc: { type: String},
+    projectNotes: {type: String},
+    fee: { type: String},
     date: { type: Date, default: Date.now }
   });
 

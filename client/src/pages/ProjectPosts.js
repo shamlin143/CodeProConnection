@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 
 
-function JobPosts () {
+function ProjectPosts () {
     
 const [projectsState, setProjectsState] = useState([]);
 
@@ -30,9 +30,7 @@ useEffect(() => {
         <p>Code Pro Jobs Listings</p>
        
         <div>
-           <h3>Project Fee: {projectsState.employerFee}</h3>
-            <p>Website description: {projectsState.employerProjectDesc}</p>
-          <p>Date Posted: {projectsState.date}</p>
+           {console.log(projectsState)}
 
         </div>
         </div>
@@ -40,4 +38,4 @@ useEffect(() => {
 
 }
 
-export default JobPosts;
+export default ProjectPosts;
