@@ -29,5 +29,17 @@ h5 {
 .form-group {
 width: 350px
 }
-
-    
+h6 {
+    font-size: 200px;
+    color: rebeccapurple; 
+}
+.jobposts {
+    padding-left: 50px;
+} 
+p {
+    font-size: 45px;
+} 
+h3 {
+    color: purple;
+    font-size: 60px;
+} 
