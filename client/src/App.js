@@ -16,7 +16,7 @@ function App() {
     <div>
       {/* <Nav /> */}
       <Switch>
-        <Route exact path = {["/", "/CodePro"]}>
+        <Route exact path = {["/", "/Login"]}>
          <Login />
         </Route>
         <Route exact path = {["/signup"]}>

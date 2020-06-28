@@ -32,6 +32,12 @@ function Login() {
         event.preventDefault();
         window.location.href ="/signup";
     }
+
+  function btnClick (event){
+    event.preventDefault();
+    const {name} = event.target;
+    console.log(name + " was clicked")
+  }
     
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -80,6 +86,9 @@ function Login() {
                 name="Password"
                 placeholder="Password Verification (required)"
               />
+              <LoginBtn 
+                onClick={btnClick} name="LoginButton"
+              ></LoginBtn>
               <div>
                 <h5>
                 Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
@@ -89,9 +98,9 @@ function Login() {
         
                    
                       <Link to="/login">
-                      <LoginBtn renderAs="button">
-                      <button onClick={() => { handleFormSubmit()}}></button>
-                       <span>Login</span>
+                      <LoginBtn onClick={btnClick} name="LoginButton2">
+                      {/* <button onClick={() => { handleFormSubmit()}}></button>
+                       <span>Login</span> */}
                       </LoginBtn>
                       </Link>
                    
