@@ -60,6 +60,10 @@ function Login() {
         <Jumbotron>
           <h1 className="titleHead"> CodeProConnection</h1>
           <h4>As a Freelancer search job postings to match your skill set.  As a Employer post a job and find a qualified Candidate</h4>
+      <li><a href="/PostaProject/">Post a Job</a></li>
+      <li><a href="/ProjectPosts/">View Jobs</a></li>
+      <li><a href="/signup/">SignUp</a></li>
+      <li class="active"><a href="/">Login</a></li>
         </Jumbotron>
               <div className="loginText">
                 <form >
@@ -97,8 +101,22 @@ function Login() {
                 I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
                 </h5>
               </div>
-            </form>
-            </div>
+
+        
+                   
+                      <Link to="/login">
+                      <LoginBtn renderAs="button">
+                      <button onClick={() => { handleFormSubmit()}}></button>
+                       <span>Login</span>
+                      </LoginBtn>
+                      </Link>
+                   
+                   
+                {/* <button type="button" onClick={signupclick} value="SignUp">SignUp</button> */}
+                                   
+              </form>
+                </div>
+
                
        </Container>
         )
