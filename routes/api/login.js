@@ -3,7 +3,7 @@ const UserSession = require('../../models/CodeProSession')
 
 module.exports = (app) => {
 
-    app.post('api/account/signin', (req, res, next) => {
+    app.post('api/account/login', (req, res, next) => {
         const { body } = req;
         const { 
             username,

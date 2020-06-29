@@ -23,13 +23,13 @@ const codeproSchema = new Schema({
 //   });
 });
 
-codeproSchema.methods.generateHash = function (password) {
-  return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
-}
+// codeproSchema.methods.generateHash = function (password) {
+//   return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
+// }
 
-codeproSchema.methods.validPassword = function (password, encrypted) {
-  return bcrypt.compareSync(password, this.password);
-}
+// codeproSchema.methods.validPassword = function (password, encrypted) {
+//   return bcrypt.compareSync(password, this.password);
+// }
 
 
 // codeproSchema

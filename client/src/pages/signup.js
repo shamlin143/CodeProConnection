@@ -28,14 +28,15 @@ function SignUp() {
     const { name, value } = event.target;
     setFormObject({...formObject, [name]: value})
   };
-
+  
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.email && formObject.password) {
-      API.loginUser({
-        eamil: formObject.email,
+      API.saveUser({
+        email: formObject.email,
         password: formObject.password,
-        })
+      
+      })
         .then(res => loadUser())
         .catch(err => console.log(err));
     }
