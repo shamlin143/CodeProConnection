@@ -1,10 +1,12 @@
 .jumbotron {
 background-image: url("../images/codepro.jpeg");
 background-position: center;
-background-size: cover;
+background-size: auto;
 background-repeat: no-repeat;
 width: 95%;
+
 min-height: 180px;
+
 padding-top: 100px;
 margin: 0px;
 margin-bottom: 5%;

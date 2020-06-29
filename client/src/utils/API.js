@@ -11,16 +11,11 @@ export default {
   },
   getProjects: async function() {
     // Todo - will need to pull all pending project from database
-   return {
-      
-      freelancerCredentials: "Javascript",
-      freelancerExperience: "2 years",
-      employerProjectId: "123456789123",
-      employerProjectDesc: "I need a website",
-      employerFee: "100",
-      date: "6-27-2020"
-    }
-  }
+   
+    return await axios.get('/api/projects');
+            
+  },
+  
   // // Deletes the book with the given id
   // deleteBook: function(id) {
   //   return axios.delete("/api/books/" + id);

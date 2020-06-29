@@ -5,10 +5,13 @@ import NoMatch from "./pages/NoMatch";
 import SignUp from "./pages/signup";
 import Nav from "./components/Nav";
 import { BrowserRouter, Switch,  Route }   from "react-router-dom";
+
 import ProjectPosts from "./pages/ProjectPosts";
 import PostaProject from "./pages/PostaProject";
 import Navbar from "./components/Navbar/navbar";
 
+
+import JobPosts from "./pages/ProjectPosts";
 
 
 // The app will not render correctly until you setup a Route component.
@@ -20,12 +23,13 @@ function App() {
     <div>
       {/* <Nav /> */}
       <Switch>
-        <Route exact path = {["/", "/CodePro"]}>
+        <Route exact path = {["/", "/Login"]}>
          <Login />
         </Route>
         <Route exact path = {["/signup"]}>
          <SignUp />
          </Route>
+
          <Route exact path = {["/PostaProject"]}>
          <PostaProject />
          </Route>
@@ -34,6 +38,7 @@ function App() {
          </Route>
          <Route exact path = {["/Navbar"]}>
          <Navbar />
+
          </Route>
         <Route exact path = "/CodePro/:id">
           <Detail />
