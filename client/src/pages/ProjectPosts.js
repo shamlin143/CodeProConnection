@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 
 
-function JobPosts () {
+function PorjectPosts () {
     
 const [projectsState, setProjectsState] = useState([]);
 
@@ -18,14 +18,15 @@ useEffect(() => {
     })
     }, []);
   
-   
-
-
-
-    return (
-        <div className="jobposts">
+     return (
+        <div className="projectposts">
         <Jumbotron>
             <h6>Code Pro Job Postings</h6>
+            <h4>Review the projects listed below to find one you are qualified to do and interests you and apply. Good Luck!</h4>
+      <li><a href="/PostaProject/">Post a Job</a></li>
+      <li><a href="/ProjectPosts/">View Jobs</a></li>
+      <li><a href="/signup/">SignUp</a></li>
+      <li class="active"><a href="/">Login</a></li>
             </Jumbotron>
         <p>Code Pro Jobs Listings</p>
        
@@ -40,4 +41,4 @@ useEffect(() => {
 
 }
 
-export default JobPosts;
+export default PorjectPosts;

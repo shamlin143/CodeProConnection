@@ -4,22 +4,23 @@ background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
 width: 95%;
-min-height: 300px;
+min-height: 180px;
 padding-top: 100px;
 margin: 0px;
 margin-bottom: 5%;
 display: table;
+
 padding: 20px 20px;
 color: whitesmoke;
 background-size: cover;
 background-attachment: fixed;
 }
 .titleHead {
-    font-size: 250px;
+    font-size: 150px;
     color: rebeccapurple;
 }
 h4 {
-    font-size: 45px;
+    font-size: 40px;
     color: rebeccapurple;
 }
 h5 {
@@ -30,12 +31,9 @@ h5 {
 width: 350px
 }
 h6 {
-    font-size: 200px;
+    font-size: 100px;
     color: rebeccapurple; 
 }
-.jobposts {
-    padding-left: 50px;
-} 
 p {
     font-size: 45px;
 } 
@@ -43,3 +41,11 @@ h3 {
     color: purple;
     font-size: 60px;
 } 
+li {
+    float: Right;
+    color: lime;
+    font-size: 25px;
+}
+a {
+    color: red;
+}
