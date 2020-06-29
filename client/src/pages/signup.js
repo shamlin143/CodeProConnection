@@ -47,6 +47,10 @@ function SignUp() {
         <Jumbotron>
           <h1 className="titleHead"> CodeProConnection</h1>
           <h4>As a Freelancer search job postings to match your skill set.  As a Employer post a job and find a qualified Candidate</h4>
+      <li><a href="/PostaProject/">Post a Job</a></li>
+      <li><a href="/ProjectPosts/">View Jobs</a></li>
+      <li><a href="/signup/">SignUp</a></li>
+      <li class="active"><a href="/">Login</a></li>
         </Jumbotron>
               <div className="signUpText">
                 <form >
