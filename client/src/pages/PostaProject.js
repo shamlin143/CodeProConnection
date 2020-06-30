@@ -1,119 +1,110 @@
 import React, { useState, useEffect } from "react";
+import SignUpBtn from "../components/SignUpBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import SubmitBtn from "../components/SubmitBtn"
-const mongoose = require("mongoose");
-
-export default PostaProject;
+import { Col, Row, Container } from "../components/Grid";
+import { Input, TextArea, FormBtn } from "../components/Form";
 
 
-// function handleInputChange(event) {
-    // const { name, value } = event.target;
-    // setFormObject({...formObject, [name]: value})
 
+function SignUp() {
+  const [user, setUser] = useState([])
+  const [formObject, setFormObject] = useState({})
+  console.log(formObject);
 
-    function PostaProject(event) {
-        event.preventDefault();
-        window.location.href ="/PostaJob";
-   
-     
-    ProjectPost.create() 
-      const [ProjectPost, setProjectPost] = useState([])
-      const [formObject, setFormObject] = useState({
-      employerProjectId: "",
-      employerProjectDesc: "",
-      employerFee: "",
-      date: ""
-    })
-    .then(user => {
-      console.log(`${user.length} users created`);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-    .finally(() => {
-      mongoose.connection.close();
-    })
-  
-  
+  useEffect(() => {
+  // loadUser()
+  }, [])
 
-    const [projectsState, setProjectsState] = useState([]);
+  function loadUser() {
+    API.getUser()
+      .then(res => 
+        setUser(res.data)
+      )
+      .catch(err => console.log(err));
+  };
 
-useEffect(() => {
-    API.ProjectPost()
-    .then(data => {
-        console.log(data);
-        setProjectsState(data);
-    })
-    },[])
- 
-    
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
+    setFormObject(values => {
+      return {...values, [name]: value};
+    } )
   };
-
+  
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.Employer && formObject.ProjectDescription && formObject.Timeallowed && formObject.DatePosted) {
-      API.ProjectPost({
-       Employer: formObject.employer,
-       ProjectDescription: formObject.ProjectDescription,
-       Timeallowed: formObject.Timeallowed,
-       DatePosted: formObject.DatePosted,
-        })
-        .then(user => {
-          console.log(`${user.length} users created`);
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => {
-          mongoose.connection.close();
-        });
+    if (formObject.email && formObject.password) {
+      API.saveUser({
+        email: formObject.email,
+        password: formObject.password,
+      
+      })
+        // .then(res => loadUser())
+        .catch(err => console.log(err));
     }
   };
-  var Input = this.Input = Input
+
     return (
-       <div className="PostaJob">
+      <Container fluid>
         <Jumbotron>
-            <h6>Post Your Code Pro Job Here</h6>
+          <h1 className="titleHead"> CodeProConnection</h1>
+          <h4>As a Freelancer search job postings to match your skill set.  As a Employer post a job and find a qualified Candidate</h4>
       <li><a href="/PostaProject/">Post a Job</a></li>
       <li><a href="/ProjectPosts/">View Jobs</a></li>
       <li><a href="/signup/">SignUp</a></li>
       <li class="active"><a href="/">Login</a></li>
-            </Jumbotron>
-           <p>Code Pro Post Form</p>
-      <form>
-           <Input
+        </Jumbotron>
+              <div className="signUpText">
+                <form >
+                  <div className="signup ">
+                    <h4>SignUp:</h4>
+                  </div>
+                  </form>
+               </div>   
+              <div>
+            <form onSubmit={handleFormSubmit}>
+              <Input
                 onChange={handleInputChange}
-                Employer="name"
-                placeholder="name (required)"
+                name="email"
+                placeholder="email (required)"
               />
-           <Input
+              <Input
                 onChange={handleInputChange}
-                ProjectDescription ="Description"
-                placeholder="Description (required)"
+                name="password"
+                placeholder="Password (required)"
               />
-           <Input
+               <Input
                 onChange={handleInputChange}
-                Timeallowed ="Lenght of time"
-                placeholder="Lenght of time (required)"
+                name="password"
+                placeholder="Password Verification (required)"
               />
-           <Input
-                onChange={handleInputChange}
-                DatePosted ="Date"
-                placeholder="Date Posted (required)"
-              />
+              <div>
+                <h5>
+                Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
+                I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
+                </h5>
+              </div>
 
-            <button type="button" onClick={ProjectPost()} value="SubmitBtn">Submit</button>
-            </form>
-            </div>
-        
-    );
-    }
-// const PostaJob = require('../models/ProjectPost');
-// PostaJob.collection.drop();
+                    {/* <SignUpBtn
+                      disabled={0}
+                    > */}
+                      <Link to="/signup">
+                      {/* <SignUpBtn renderAs="button">
+                      <button onClick={() => { handleFormSubmit()}}></button>
+                       <span>SignUp</span>
+                      </SignUpBtn> */}
+                      </Link>
+                      <button type='submit'>Signup</button>
+                    {/* </SignUpBtn> */}
+                </form>
+                </div>
+               
+       </Container>
+        )
+        }
+       
+  
 
 
+export default SignUp;
