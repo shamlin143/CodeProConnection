@@ -17,13 +17,13 @@ function SignUp() {
   // loadUser()
   }, [])
 
-  function loadUser() {
-    API.getUser()
-      .then(res => 
-        setUser(res.data)
-      )
-      .catch(err => console.log(err));
-  };
+  // function loadUser() {
+  //   API.getUser()
+  //     .then(res => 
+  //       setUser(res.data)
+  //     )
+  //     .catch(err => console.log(err));
+  // };
 
   function handleInputChange(event) {
     const { name, value } = event.target;
