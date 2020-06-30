@@ -11,9 +11,10 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 function SignUp() {
   const [user, setUser] = useState([])
   const [formObject, setFormObject] = useState({})
+  console.log(formObject);
 
   useEffect(() => {
-  loadUser()
+  // loadUser()
   }, [])
 
   function loadUser() {
@@ -26,17 +27,20 @@ function SignUp() {
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
+    setFormObject(values => {
+      return {...values, [name]: value};
+    } )
   };
-
+  
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.email && formObject.password) {
-      API.loginUser({
-        eamil: formObject.email,
+      API.saveUser({
+        email: formObject.email,
         password: formObject.password,
-        })
-        .then(res => loadUser())
+      
+      })
+        // .then(res => loadUser())
         .catch(err => console.log(err));
     }
   };
@@ -59,7 +63,7 @@ function SignUp() {
                   </form>
                </div>   
               <div>
-            <form>
+            <form onSubmit={handleFormSubmit}>
               <Input
                 onChange={handleInputChange}
                 name="email"
@@ -67,12 +71,12 @@ function SignUp() {
               />
               <Input
                 onChange={handleInputChange}
-                name="Password"
+                name="password"
                 placeholder="Password (required)"
               />
                <Input
                 onChange={handleInputChange}
-                name="Password"
+                name="password"
                 placeholder="Password Verification (required)"
               />
               <div>
@@ -82,16 +86,17 @@ function SignUp() {
                 </h5>
               </div>
 
-                    <SignUpBtn
+                    {/* <SignUpBtn
                       disabled={0}
-                    >
+                    > */}
                       <Link to="/signup">
-                      <SignUpBtn renderAs="button">
+                      {/* <SignUpBtn renderAs="button">
                       <button onClick={() => { handleFormSubmit()}}></button>
                        <span>SignUp</span>
-                      </SignUpBtn>
+                      </SignUpBtn> */}
                       </Link>
-                    </SignUpBtn>
+                      <button type='submit'>Signup</button>
+                    {/* </SignUpBtn> */}
                 </form>
                 </div>
                

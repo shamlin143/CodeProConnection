@@ -16,8 +16,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log(req.body)
     db.CodePro
-      .create(req.body)
+      .create({email: req.body.email, password: req.body.password})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
