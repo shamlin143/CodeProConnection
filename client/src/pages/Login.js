@@ -16,7 +16,7 @@ function Login() {
   const [formObject, setFormObject] = useState({})
 
   useEffect(() => {
-  loadUser()
+  // loadUser()
   }, [])
 
   function loadUser() {
