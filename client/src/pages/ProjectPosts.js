@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 
-function PorjectPosts () {
+function ProjectPosts () {
 
     
 const [projects, setProjects] = useState([]);
@@ -41,10 +41,7 @@ useEffect(() => {
                 <p key={project._id}>{project.freelancerExperience}</p><br/>
                 <p key={project._id}>{project.date}</p>
             </div>
-            ))}
-
-           
-
+            ))}    
 
         </div>
         </div>
@@ -53,5 +50,5 @@ useEffect(() => {
 }
 
 
-export default PorjectPosts;
+export default ProjectPosts;
 
