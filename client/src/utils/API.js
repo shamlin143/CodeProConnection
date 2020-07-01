@@ -9,10 +9,9 @@ export default {
   getUser: function(id) {
     return axios.get("/api/users/" + id);
   },
-  getProjects: async function() {
+  getProjects:  function() {
     // Todo - will need to pull all pending project from database
-   
-    return await axios.get('/api/projects');
+   return  axios.get('/api/projects');
             
   },
   saveUser: (value) => {

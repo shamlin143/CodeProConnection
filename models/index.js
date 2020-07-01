@@ -1,3 +1,4 @@
 module.exports = {
-  CodePro: require("./CodePro")
+  CodePro: require("./CodePro"),
+  ProjectPost: require("./projectPost")
 };
