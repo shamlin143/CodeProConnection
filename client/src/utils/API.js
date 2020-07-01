@@ -14,6 +14,10 @@ export default {
    return  axios.get('/api/projects');
             
   },
+  saveProject: function(project){
+    console.log(project);
+    return axios.post("/api/projects", project)
+  },
   saveUser: (value) => {
     console.log('api call')
     console.log(value)

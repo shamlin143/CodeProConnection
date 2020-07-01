@@ -1,45 +1,35 @@
-import React, { useState, useEffect } from "react";
-import SignUpBtn from "../components/SignUpBtn";
+import React, { useState } from "react";
+
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import Button from "../components/Button/Button";
 
 
-
-function SignUp() {
-  const [user, setUser] = useState([])
+function PostaProject() {
+  const [project, setProject] = useState({})
   const [formObject, setFormObject] = useState({})
   console.log(formObject);
 
-  useEffect(() => {
-  // loadUser()
-  }, [])
-
-  function loadUser() {
-    API.getUser()
-      .then(res => 
-        setUser(res.data)
-      )
-      .catch(err => console.log(err));
-  };
+ 
 
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject(values => {
       return {...values, [name]: value};
     } )
+    setProject(value =>{
+      return {...project, [name]:value}
+      
+    })
   };
   
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.email && formObject.password) {
-      API.saveUser({
-        email: formObject.email,
-        password: formObject.password,
-      
-      })
+    if (formObject) {
+      API.saveUser(formObject)
         // .then(res => loadUser())
         .catch(err => console.log(err));
     }
@@ -53,7 +43,7 @@ function SignUp() {
       <li><a href="/PostaProject/">Post a Job</a></li>
       <li><a href="/ProjectPosts/">View Jobs</a></li>
       <li><a href="/signup/">SignUp</a></li>
-      <li class="active"><a href="/">Login</a></li>
+      <li className="active"><a href="/">Login</a></li>
         </Jumbotron>
               <div className="signUpText">
                 <form >
@@ -66,19 +56,37 @@ function SignUp() {
             <form onSubmit={handleFormSubmit}>
               <Input
                 onChange={handleInputChange}
-                name="email"
-                placeholder="email (required)"
+                name="projectName"
+                placeholder="Project Name (required)"
               />
               <Input
                 onChange={handleInputChange}
-                name="password"
-                placeholder="Password (required)"
+                name="businessType"
+                placeholder="Primary Industry"
               />
                <Input
                 onChange={handleInputChange}
-                name="password"
-                placeholder="Password Verification (required)"
+                name="projectFeatures"
+                placeholder="Functionality Requested"
               />
+              <Input
+                onChange={handleInputChange}
+                name="projectDescription"
+                placeholder="Basic description (required)"
+              />
+              <Input
+              onChange={handleInputChange}
+              name="projectNotes"
+              placeholder="Additional notes about the project"
+            />
+              <Input
+              onChange={handleInputChange}
+              name="fee"
+              placeholder="Proposed Payment"
+            />
+            <Button onClick={handleFormSubmit}>
+             Submit 
+            </Button>
               <div>
                 <h5>
                 Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
@@ -86,17 +94,24 @@ function SignUp() {
                 </h5>
               </div>
 
-                    {/* <SignUpBtn
-                      disabled={0}
-                    > */}
-                      <Link to="/signup">
-                      {/* <SignUpBtn renderAs="button">
-                      <button onClick={() => { handleFormSubmit()}}></button>
-                       <span>SignUp</span>
-                      </SignUpBtn> */}
-                      </Link>
+              {/* const ProjectPostSchema = new Schema({
+    // userCreator: { type: Schema.Types.ObjectId, ref: "login User" },
+    freelancerCredentials: { type: String},
+    freelancerExperience: { type: String},
+    businessType: {type: String},
+    employerID: {type: String},
+    employerUserName: {type: String},
+    appFeatures: [ {type: String}],
+    projectId: { type: Schema.Types.ObjectId, ref: "CodePro"},
+    projectDesc: { type: String},
+    projectNotes: {type: String},
+    fee: { type: String},
+    date: { type: Date, default: Date.now }
+  }); */}
+                  
                       <button type='submit'>Signup</button>
                     {/* </SignUpBtn> */}
+                
                 </form>
                 </div>
                
@@ -107,4 +122,4 @@ function SignUp() {
   
 
 
-export default SignUp;
+export default PostaProject;
