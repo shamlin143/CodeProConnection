@@ -12,7 +12,7 @@ const ProjectPostSchema = new Schema({
     employerUserName: {type: String},
     appFeatures: [ {type: String}],
     projectId: { type: Schema.Types.ObjectId, ref: "CodePro"},
-    projectDesc: { type: String},
+    projectDesc: { type: String, argument: [144]},
     projectNotes: {type: String},
     fee: { type: String},
     date: { type: Date, default: Date.now }

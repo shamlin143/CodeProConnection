@@ -1,9 +1,9 @@
 const db = require("../models");
 
-
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
+    console.log(db);
     db.ProjectPost
       .find(req.query)
       .sort({ date: -1 })
@@ -13,7 +13,7 @@ module.exports = {
   findById: function(req, res) {
     db.ProjectPost
       .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => res.json(dbModel.data))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {

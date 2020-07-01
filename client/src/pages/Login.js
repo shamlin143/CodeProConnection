@@ -14,6 +14,7 @@ import {Redirect} from "react-router-dom";
 function Login() {
   const [user, setUser] = useState([])
   const [formObject, setFormObject] = useState({})
+  console.log(formObject);
 
   useEffect(() => {
   // loadUser()

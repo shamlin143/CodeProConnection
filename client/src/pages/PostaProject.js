@@ -13,18 +13,6 @@ function SignUp() {
   const [formObject, setFormObject] = useState({})
   console.log(formObject);
 
-  useEffect(() => {
-  // loadUser()
-  }, [])
-
-  function loadUser() {
-    API.getUser()
-      .then(res => 
-        setUser(res.data)
-      )
-      .catch(err => console.log(err));
-  };
-
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject(values => {
@@ -53,7 +41,7 @@ function SignUp() {
       <li><a href="/PostaProject/">Post a Job</a></li>
       <li><a href="/ProjectPosts/">View Jobs</a></li>
       <li><a href="/signup/">SignUp</a></li>
-      <li class="active"><a href="/">Login</a></li>
+      <li className="active"><a href="/">Login</a></li>
         </Jumbotron>
               <div className="signUpText">
                 <form >

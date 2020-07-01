@@ -33,7 +33,7 @@ useEffect(() => {
 
             </Jumbotron>
         <p>Code Pro Jobs Listings</p>
-       
+        
         <div>
             {projects.map(project => (
                 <div>
