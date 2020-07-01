@@ -8,7 +8,7 @@ mongoose.connect(
 const CodePro = require('../models/CodePro');
 CodePro.collection.drop();
 
-const ProjectPost = require('../models/projectPost');
+const ProjectPost = require('../models/projectPost.js');
 ProjectPost.collection.drop();
 
 

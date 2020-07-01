@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
-import Button from "../components/Button/Button";
+import button from "../components/Button/button";
 
 
 function PostaProject() {
@@ -17,19 +17,19 @@ function PostaProject() {
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject(values => {
-      return {...values, [name]: value};
-    } )
-    setProject(value =>{
-      return {...project, [name]:value}
+    // setFormObject(values => {
+    //   return {...values, [name]: value};
+    // } )
+    setProject(values =>{
+      return {...values, [name]:value}
       
     })
   };
   
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject) {
-      API.saveUser(formObject)
+    if (project) {
+      API.saveProject(project)
         // .then(res => loadUser())
         .catch(err => console.log(err));
     }
@@ -89,13 +89,12 @@ function PostaProject() {
               name="fee"
               placeholder="Proposed Payment"
             />
-            <Button onClick={handleFormSubmit}>
+            <button onClick={handleFormSubmit}>
              Submit 
-            </Button>
+            </button>
               <div>
                 <h5>
-                Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
-                I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
+                Please input the information above to post a job. Thank you
                 </h5>
               </div>
                    
@@ -104,9 +103,7 @@ function PostaProject() {
                
        </Container>
         )
-        }
-       
-  
+        }    
 
 
 export default PostaProject;

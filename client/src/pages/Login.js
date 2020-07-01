@@ -92,28 +92,16 @@ function Login() {
                 <LoginBtn 
                   onClick={handleFormSubmit} name="LoginButton"
                 ></LoginBtn>
-                <Link to="/signup">
-                 <SignUpBtn/>
-                </Link>
+                 
+              
             <div>
                 <h5>
                 Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
                 I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
                 </h5>
-              </div>
-
-        
+              </div>                  
                    
-                      <Link to="/login">
-                      <LoginBtn renderAs="button">
-                      <button onClick={() => { handleFormSubmit()}}></button>
-                       <span>Login</span>
-                      </LoginBtn>
-                      </Link>
-                   
-                   
-                {/* <button type="button" onClick={signupclick} value="SignUp">SignUp</button> */}
-                                   
+                                           
               </form>
                 </div>
 
