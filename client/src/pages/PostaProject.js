@@ -48,12 +48,17 @@ function PostaProject() {
               <div className="signUpText">
                 <form >
                   <div className="signup ">
-                    <h4>SignUp:</h4>
+                    <h4>Post a Project:</h4>
                   </div>
                   </form>
                </div>   
               <div>
             <form onSubmit={handleFormSubmit}>
+             <Input
+                onChange={handleInputChange}
+                name="userName"
+                placeholder="UserName (required)"
+              />
               <Input
                 onChange={handleInputChange}
                 name="projectName"
@@ -93,25 +98,7 @@ function PostaProject() {
                 I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
                 </h5>
               </div>
-
-              {/* const ProjectPostSchema = new Schema({
-    // userCreator: { type: Schema.Types.ObjectId, ref: "login User" },
-    freelancerCredentials: { type: String},
-    freelancerExperience: { type: String},
-    businessType: {type: String},
-    employerID: {type: String},
-    employerUserName: {type: String},
-    appFeatures: [ {type: String}],
-    projectId: { type: Schema.Types.ObjectId, ref: "CodePro"},
-    projectDesc: { type: String},
-    projectNotes: {type: String},
-    fee: { type: String},
-    date: { type: Date, default: Date.now }
-  }); */}
-                  
-                      <button type='submit'>Signup</button>
-                    {/* </SignUpBtn> */}
-                
+                   
                 </form>
                 </div>
                
