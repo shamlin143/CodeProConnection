@@ -3,7 +3,6 @@ const db = require("../models");
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
-    console.log(db);
     db.ProjectPost
       .find(req.query)
       .sort({ date: -1 })
@@ -17,9 +16,18 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log(db);
     db.ProjectPost
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
+      .create({
+        businessType: req.body.businessType,
+        projectName: req.body.projectName,
+        userName: req.body.userName,
+        projectFeatures: req.body.projectFeatures,
+        projectDescription: req.body.projectDescription,
+        projectNotes: req.body.projectNotes,
+        fee: req.body.fee
+     })
+      .then(dbModel => res.json(dbModel))``
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {

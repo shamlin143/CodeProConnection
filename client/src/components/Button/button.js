@@ -3,12 +3,10 @@ import "./style.css";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-function button(props) {
+function Button(props) {
   return (
-    <span className="button" {...props} role="button" tabIndex="0">
-   SignUp
-    </span>
-  );
+    <button className="button" {...props} role="button" tabIndex="0"></button>
+   );
 }
 
-export default button;
+export default Button;

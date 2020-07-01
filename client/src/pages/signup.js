@@ -11,19 +11,9 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 function SignUp() {
   const [user, setUser] = useState([])
   const [formObject, setFormObject] = useState({})
-  console.log(formObject);
+  
 
-  useEffect(() => {
-  // loadUser()
-  }, [])
-
-  function loadUser() {
-    API.getUser()
-      .then(res => 
-        setUser(res.data)
-      )
-      .catch(err => console.log(err));
-  };
+  
 
   function handleInputChange(event) {
     const { name, value } = event.target;

@@ -10,9 +10,13 @@ export default {
     return axios.get("/api/users/" + id);
   },
   getProjects:  function() {
-    // Todo - will need to pull all pending project from database
-   return  axios.get('/api/projects');
+   
+    return  axios.get('/api/projects');
             
+  },
+  saveProject: function(project){
+    console.log(project);
+    return axios.post("/api/projects", project)
   },
   saveUser: (value) => {
     console.log('api call')
