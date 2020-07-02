@@ -1,5 +1,5 @@
 const express = require("express");
-// const passport = require('passport');
+const passport = require('passport');
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -40,6 +40,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/CodePro", { use
 
 // passport.serializeUser(function(CodePro, done) {
 //   done(null, CodePro.id);
+//   console.log('passport', CodePro.id)
 // });
  
 // passport.deserializeUser(function(id, done) {

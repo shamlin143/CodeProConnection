@@ -3,11 +3,80 @@ const UserSession = require('../../models/CodeProSession')
 
 module.exports = (app) => {
 
+    // app.post('api/account/signup', (req, res, next) => {
+    //     const { body } = req;
+    //     const { 
+    //         // username,
+    //         email,
+    //         password
+    //     } = body;
+    //     let {
+    //         email
+    //     } = body;
+
+    //     if (!email) {
+    //         return res.end({
+    //             success: false,
+    //             message: 'Error: Email can not be blank.'
+    //         });
+    //     }
+    //     if (!password) {
+    //         return res.end({
+    //             success: false,
+    //             message: 'Error: Password can not be blank.'
+    //         });
+    //     }
+    //     // if (!username) {
+    //     //     return res.end({
+    //     //         success: false,
+    //     //         message: 'Error: Username can not be blank.'
+    //     //     });
+    //     // }
+    
+    //     console.log('here');
+
+    //     email = email.toLowerCase();
+
+    //     // steps :
+    //     // verify email doesnt exit already
+
+    //     user.find({
+    //         email: email            
+    //     }, (err, previousUsers) => {
+    //         if (err) {
+    //             return res.end({
+    //                 success: false,
+    //                 message: 'Error: Username cannot be blank.'
+    //             });                 
+    //         } else if (previousUsers.length > 0) {
+    //             return res.end({
+    //                 success: false,
+    //                 message: 'Error: Account already exists.'
+    //             });   
+    //         }
+    //     })
+
+    //     const newUser = new User();
+
+    //     newUser.email = email;
+    //     newUser.username = username;
+    //     newUser.password = newuser.generateHash(password);
+    //     newUser.save((err, user) => {
+    //         if (err) {
+    //             return res.end({
+    //                 success: false,
+    //                 message: 'Error: Server Error.'
+    //             }); 
+    //         }
+    //         return res.end({
+    //             success: true,
+    //             message: 'Signed up'
+    //         }); 
+    //     });       
+    // });
     app.post('api/account/login', (req, res, next) => {
         const { body } = req;
         const { 
-            username,
-            email,
             password
         } = body;
         let {
@@ -26,81 +95,12 @@ module.exports = (app) => {
                 message: 'Error: Password can not be blank.'
             });
         }
-        if (!username) {
-            return res.end({
-                success: false,
-                message: 'Error: Username can not be blank.'
-            });
-        }
-    
-        console.log('here');
-
-        email = email.toLowerCase();
-
-        // steps :
-        // verify email doesnt exit already
-
-        user.find({
-            email: email            
-        }, (err, previousUsers) => {
-            if (err) {
-                return res.end({
-                    success: false,
-                    message: 'Error: Username cannot be blank.'
-                });                 
-            } else if (previousUsers.length > 0) {
-                return res.end({
-                    success: false,
-                    message: 'Error: Account already exists.'
-                });   
-            }
-        })
-
-        const newUser = new User();
-
-        newUser.email = email;
-        newUser.username = username;
-        newUser.password = newuser.generateHash(password);
-        newUser.save((err, user) => {
-            if (err) {
-                return res.end({
-                    success: false,
-                    message: 'Error: Server Error.'
-                }); 
-            }
-            return res.end({
-                success: true,
-                message: 'Signed up'
-            }); 
-        });       
-    });
-    app.post('api/account/signup', (req, res, next) => {
-        const { body } = req;
-        const { 
-            password
-        } = body;
-        let {
-            email
-        } = body;
-
-        if (!email) {
-            return res.end({
-                success: false,
-                message: 'Error: Email can not be blank.'
-            });
-        }
-        if (!password) {
-            return res.end({
-                success: false,
-                message: 'Error: Password can not be blank.'
-            });
-        }
-        if (!username) {
-            return res.end({
-                success: false,
-                message: 'Error: Username can not be blank.'
-            });
-        }
+        // if (!username) {
+        //     return res.end({
+        //         success: false,
+        //         message: 'Error: Username can not be blank.'
+        //     });
+        // }
 
         email = email.toLowerCase();
 
@@ -130,16 +130,16 @@ module.exports = (app) => {
             }
 
             // Otherwise correct user
-            new userSession = new UserSession();
-            userSession.userId = user._id;
-            userSession.save((err, doc) => {
-                if (err) {
-                    console.log(err);
-                    return res.send({
-                        success: false,
-                        message: 'Error: Server error'
-                    });
-                }
+            // new userSession = new UserSession();
+            // userSession.userId = user._id;
+            // userSession.save((err, doc) => {
+            //     if (err) {
+            //         console.log(err);
+            //         return res.send({
+            //             success: false,
+            //             message: 'Error: Server error'
+            //         });
+            //     }
 
                 return res.send({
                     success: true,
@@ -149,7 +149,7 @@ module.exports = (app) => {
             });
 
         });
-    });
+    };
     
     app.post('/api/account/verify', (req, res, next) => {
         //get the token
@@ -222,4 +222,3 @@ module.exports = (app) => {
             };
         })
     });    
-};

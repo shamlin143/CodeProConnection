@@ -43,7 +43,7 @@ function SignUp() {
       <li><a href="/PostaProject/">Post a Job</a></li>
       <li><a href="/ProjectPosts/">View Jobs</a></li>
       <li><a href="/signup/">SignUp</a></li>
-      <li class="active"><a href="/">Login</a></li>
+      <li className="active"><a href="/">Login</a></li>
         </Jumbotron>
               <div className="signUpText">
                 <form >
@@ -69,13 +69,13 @@ function SignUp() {
                 name="password"
                 placeholder="Password Verification (required)"
               />
-              <button type='submit'>Signup</button>
+              <button type='submit'>Signup</button><br></br>
                    
               <div>
-                <h5>
+                <h5 class=" my-2">
                 Brought to you by the Silver Foxes Group This is an app that will allow a freelancer to be connect with people that have coding jobs they need completed.
                 I have a coding project that I need someone to complete. Where can I go to find potential candidates. CPC is a website that provides the projects to many possible applicants for a small fee. I am a freelancer looking for paying coding projects. Where can I go to find project possibilities. CPC is a website that brings coding projects to the freelancers attention."
-                </h5>
+                </h5><br></br>
               </div>
                      </form>
                 </div>
