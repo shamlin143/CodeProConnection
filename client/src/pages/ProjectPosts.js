@@ -40,12 +40,12 @@ useEffect(() => {
                     <div class="row mx-1 my-4 ">
                     <div class="card border border-info bg-success h-100">
                 {/* <p key={project._id}>{project._id}</p><br/>   */}
-                <p key={project._id}>Project Name: {project.projectName}</p>
-                <p key={project._id}>UserName: {project.userName}</p>
-                <p key={project._id}>Project Type: {project.businessType}</p>
-                <p key={project._id}>Project Description: {project.projectDescription}</p>
-                <p key={project._id}>Notes: {project.projectNotes}</p>
-                <p key={project._id}>Offer: ${project.fee}</p><br></br>                
+                <p key={project._id.projectName}>Project Name: {project.projectName}</p>
+                <p key={project._id.userName}>UserName: {project.userName}</p>
+                <p key={project._id.businessType}>Project Type: {project.businessType}</p>
+                <p key={project._id.projectDescription}>Project Description: {project.projectDescription}</p>
+                <p key={project._id.projectNotes}>Notes: {project.projectNotes}</p>
+                <p key={project._id.fee}>Offer: ${project.fee}</p><br></br>                
                 {/* <p key={project._id}>{project.date}</p> */}
                         </div>
                     </div>
