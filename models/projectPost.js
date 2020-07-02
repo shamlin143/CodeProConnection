@@ -8,7 +8,7 @@ const ProjectPostSchema = new Schema({
     projectName: {type: String, required: true},
     userName: {type: String},
     projectFeatures: [ {type: String}],
-    userId: { type: Schema.Types.ObjectId, ref: "CodePro"},
+    // userId: { type: Schema.Types.ObjectId, ref: "CodePro"},
     projectDescription: { type: String},
     projectNotes: {type: String},
     fee: { type: String},

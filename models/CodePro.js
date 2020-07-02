@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const codeproSchema = new Schema({
   projectPost: [{type: Schema.Types.ObjectId, ref: "projectPost"}],
   username: { type: String },
-  email: { type: String, required: true, unique: true },
+  email: { type: String, required: true },
   password: { type: String, required: true },
   isFreelancer: { type: Boolean },
   isEmployer: { type: Boolean }

@@ -27,7 +27,7 @@ module.exports = {
         projectNotes: req.body.projectNotes,
         fee: req.body.fee
      })
-      .then(dbModel => res.json(dbModel))``
+      .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
