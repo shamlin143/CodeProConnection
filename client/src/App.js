@@ -4,7 +4,7 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import SignUp from "./pages/signup";
 import Nav from "./components/Nav";
-import { BrowserRouter, Switch,  Route }   from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import ProjectPosts from "./pages/ProjectPosts";
 import PostaProject from "./pages/PostaProject";
@@ -20,35 +20,33 @@ import JobPosts from "./pages/ProjectPosts";
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      {/* <Nav /> */}
-      <Switch>
-        <Route exact path = {["/", "/Login"]}>
-         <Login />
-        </Route>
-        <Route exact path = {["/signup"]}>
-         <SignUp />
-         </Route>
+      <div>
+        {/* <Nav /> */}
+        <Switch>
+          <Route exact path={["/", "/Login"]}>
+            <Login />
+          </Route>
+          <Route exact path={["/signup"]}>
+            <SignUp />
+          </Route>
 
-         <Route exact path = {["/PostaProject"]}>
-         <PostaProject />
-         </Route>
-         <Route exact path = {["/ProjectPosts"]}>
-         <ProjectPosts />
-         </Route>
-         <Route exact path = {["/Navbar"]}>
-         <Navbar />
+          <Route exact path={["/PostaProject"]}>
+            <PostaProject />
+          </Route>
+          <Route exact path={["/ProjectPosts"]}>
+            <ProjectPosts />
+          </Route>
+          <Route exact path={["/Navbar"]}>
+          </Route>
+          <Route exact path="/CodePro/:id">
+            <Detail />
+          </Route>
+          <Route>
+            <NoMatch />
+          </Route>
+        </Switch>
 
-         </Route>
-        <Route exact path = "/CodePro/:id">
-          <Detail />
-        </Route>
-        <Route>
-          <NoMatch />
-        </Route>        
-      </Switch>
-      
-    </div>
+      </div>
     </BrowserRouter>
   );
 }

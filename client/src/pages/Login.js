@@ -24,6 +24,7 @@ function Login() {
       .then((res) => {
         setUser(res.data)
         console.log(res.data)
+        //push to job page
       })
     .catch(err => console.log(err));
   };
@@ -63,7 +64,7 @@ function Login() {
       <li><a href="/PostaProject/">Post a Job</a></li>
       <li><a href="/ProjectPosts/">View Jobs</a></li>
       <li><a href="/signup/">SignUp</a></li>
-      <li class="active"><a href="/">Login</a></li>
+      <li className="active"><a href="/">Login</a></li>
         </Jumbotron>
               <div className="loginText">
                 <form >
@@ -84,14 +85,10 @@ function Login() {
                   name="Password"
                   placeholder="Password (required)"
                 />
-                <Input
-                  onChange={handleInputChange}
-                  name="Password"
-                  placeholder="Password Verification (required)"
-                />
-                <LoginBtn 
+                <button type='submit'>login</button>
+                {/* <LoginBtn 
                   onClick={handleFormSubmit} name="LoginButton"
-                ></LoginBtn>
+                ></LoginBtn> */}
                  
               
             <div>

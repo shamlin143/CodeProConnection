@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//create userDb schema
+// create userDb schema
 
 const ProjectPostSchema = new Schema({
     businessType: {type: String},
